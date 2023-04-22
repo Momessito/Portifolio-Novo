@@ -8,11 +8,7 @@ function Github() {
   const [repositories, setRepositories] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/Momessito/repos", {
-      headers: {
-        Authorization: `Bearer ${token}`
-      }
-    })
+    fetch("https://api.github.com/users/Momessito/repos")
       .then((response) => response.json())
       .then((data) => setRepositories(data));
   }, []);
