@@ -13,9 +13,12 @@ function Github() {
       .then((data) => setRepositories(data));
   }, []);
 
+  useEffect(() => {
+
   const getLanguagesUrl = (repoName: string) => {
     return `https://api.github.com/repos/Momessito/${repoName}/languages`;
   };
+}, []);
 
   useEffect(() => {
     if (repositories.length > 0) {
