@@ -2,11 +2,17 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
+const token = "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";
+
 function Github() {
   const [repositories, setRepositories] = useState<any[]>([]);
 
   useEffect(() => {
-    fetch("https://api.github.com/users/Momessito/repos")
+    fetch("https://api.github.com/users/Momessito/repos", {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    })
       .then((response) => response.json())
       .then((data) => setRepositories(data));
   }, []);
@@ -19,7 +25,11 @@ function Github() {
     if (repositories.length > 0) {
       const updatedRepositories = repositories.map((repo) => {
         return axios
-          .get(getLanguagesUrl(repo.name))
+          .get(getLanguagesUrl(repo.name), {
+            headers: {
+              Authorization: `Bearer ${token}`
+            }
+          })
           .then((response) => {
             const data = response.data;
             // retorna um novo objeto com os dados atualizados
@@ -37,30 +47,31 @@ function Github() {
       });
     }
   }, [repositories]);
+
   return (
     <div>
       <ul id="Mais2">
-      {Array.isArray(repositories) && repositories.map((repository) => {
-          return (
-            <li className="Card" key={repository.id}>
-              <h3>{repository.name}</h3>
-              <p>{repository.description}</p>
-              {repository.languages && (
-                <p className="languages">
-                  {Object.keys(repository.languages).map((language) => {
-                    return (
-                      <span key={language} className="language">
-                        {language}
-                      </span>
-                    );
-                  })}
-                </p>
-              )}
-              <a href={repository.html_url}>Visitar</a>
-              
-            </li>
-          );
-        })}
+        {Array.isArray(repositories) &&
+          repositories.map((repository) => {
+            return (
+              <li className="Card" key={repository.id}>
+                <h3>{repository.name}</h3>
+                <p>{repository.description}</p>
+                {repository.languages && (
+                  <p className="languages">
+                    {Object.keys(repository.languages).map((language) => {
+                      return (
+                        <span key={language} className="language">
+                          {language}
+                        </span>
+                      );
+                    })}
+                  </p>
+                )}
+                <a href={repository.html_url}>Visitar</a>
+              </li>
+            );
+          })}
       </ul>
     </div>
   );
