@@ -2,7 +2,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const token = "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";
+const token = "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";
 
 function Github() {
   const [repositories, setRepositories] = useState<any[]>([]);
