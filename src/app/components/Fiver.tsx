@@ -1,7 +1,7 @@
 "use client"; // this is a client component 👈🏽
 
 function Five() {
-  const imagens = [
+  const imagens : any = [
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
       titulo: "HTML5",
@@ -39,20 +39,19 @@ function Five() {
     },
   ];
 
-  function atualizarTexto(imagem) {
-    document.getElementById("titulo").innerText = imagem.titulo;
-    document.getElementById("descricao").innerText = imagem.descricao;
-  }
-
-  function restaurarTexto() {
-    document.getElementById("titulo").innerText = "Competencias";
-    document.getElementById("descricao").innerText = "Passe o mouse em cima dos icones para ver sobre o que se trata";
+  function atualizarTexto(imagem : any) {
+    const titulo : any = document.getElementById("titulo")
+    
+    titulo.innerText = imagem.titulo;
+    const descrição : any = document.getElementById("descricao")
+    
+    descrição.innerText = imagem.descricao;
   }
 
   return (
     <div className="Five">
       <div className="skills">
-        {imagens.map((imagem, index) => (
+        {imagens.map((imagem : any, index : any) => (
           <img
             key={index}
             src={imagem.src}
