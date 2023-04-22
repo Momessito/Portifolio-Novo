@@ -3,7 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 function Github() {
-  const [repositories, setRepositories] = useState([]);
+  const [repositories, setRepositories] = useState<any[]>([]);
 
   useEffect(() => {
     fetch("https://api.github.com/users/Momessito/repos")
@@ -11,14 +11,15 @@ function Github() {
       .then((data) => setRepositories(data));
   }, []);
 
-  const getLanguagesUrl = (repoName) => {
+  const getLanguagesUrl = (repoName: string) => {
     return `https://api.github.com/repos/Momessito/${repoName}/languages`;
   };
 
   useEffect(() => {
     if (repositories.length > 0) {
       const updatedRepositories = repositories.map((repo) => {
-        return axios.get(getLanguagesUrl(repo.name))
+        return axios
+          .get(getLanguagesUrl(repo.name))
           .then((response) => {
             const data = response.data;
             // retorna um novo objeto com os dados atualizados
@@ -36,7 +37,6 @@ function Github() {
       });
     }
   }, [repositories]);
-
   return (
     <div>
       <ul id="Mais2">
