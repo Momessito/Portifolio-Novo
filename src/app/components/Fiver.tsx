@@ -1,7 +1,14 @@
 "use client"; // this is a client component 👈🏽
 
 function Five() {
-  const imagens : any = [
+
+    type Imagem ={
+         src: string; 
+         titulo: string; 
+         descricao: string; 
+    }
+
+  const imagens : Imagem[] = [
     {
       src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
       titulo: "HTML5",
@@ -39,14 +46,13 @@ function Five() {
     },
   ];
 
-  function atualizarTexto(imagem : any) {
-    const titulo : any = document.getElementById("titulo")
-    
+  function atualizarTexto(imagem: any) {
+    const titulo: any = document.getElementById("titulo");
     titulo.innerText = imagem.titulo;
-    const descrição : any = document.getElementById("descricao")
-    
-    descrição.innerText = imagem.descricao;
+    const descricao: any = document.getElementById("descricao");
+    descricao.innerText = imagem.descricao;
   }
+  
 
   return (
     <div className="Five">
