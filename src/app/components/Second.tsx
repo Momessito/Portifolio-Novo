@@ -1,3 +1,6 @@
+"use client"; // this is a client component 👈🏽
+
+
 function Second() {
     return ( 
 <div className="Second">

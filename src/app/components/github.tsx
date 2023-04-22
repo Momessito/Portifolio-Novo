@@ -40,7 +40,7 @@ function Github() {
   return (
     <div>
       <ul id="Mais2">
-        {repositories.map((repository) => {
+      {Array.isArray(repositories) && repositories.map((repository) => {
           return (
             <li className="Card" key={repository.id}>
               <h3>{repository.name}</h3>
