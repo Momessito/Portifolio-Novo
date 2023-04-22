@@ -46,12 +46,17 @@ function Five() {
     },
   ];
 
-  function atualizarTexto(imagem: any) {
-    const titulo: any = document.getElementById("titulo");
-    titulo.innerText = imagem.titulo;
-    const descricao: any = document.getElementById("descricao");
-    descricao.innerText = imagem.descricao;
+  function atualizarTexto(imagem: Imagem) {
+    const titulo = document.getElementById("titulo");
+    if (titulo) {
+      titulo.innerText = imagem.titulo;
+    }
+    const descricao = document.getElementById("descricao");
+    if (descricao) {
+      descricao.innerText = imagem.descricao;
+    }
   }
+  
   
 
   return (
