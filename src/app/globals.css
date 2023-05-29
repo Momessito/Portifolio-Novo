@@ -68,7 +68,7 @@ body {
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
   letter-spacing: 0.15em; /* Adjust as needed */
-  font-size: 2.4rem;
+  font-size: 3.4rem;
   animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
 }
 
@@ -94,9 +94,12 @@ body {
 }
 
 .first svg{
-  width: 50px;
+  width: 30px;
   margin: 15px;
   margin-top: 0px;
+}
+.first a svg{
+width: 30px;
 }
 
 .Second div{
@@ -162,7 +165,12 @@ body {
   text-align: center;
   -webkit-text-fill-color: transparent;
 }
-
+.first h2{
+  font-size: 2rem;
+}
+.first h1:last-child{
+  transform: translateY(15px);
+}
 .Card{
   width: calc(50% - 40px);
   background-color: #19141b;
@@ -491,22 +499,53 @@ input:checked ~ .text.on {
   right: -45px;
 }
 .Five img{
-  width: 120px;
+  width: 45px;
   cursor: pointer;
-  height: 120px;
-  margin: 10px;
-  border-radius: 60px;
+  height: 45px;
+  margin: 5px;
+  border-radius: 20%;
   padding: 5px;
-  border:  2px solid #483c88;
+  border:  2px solid #fff;
+  background-color: #fff;
 }
+.Five .apps{
+  width: 50px;
+  white-space:nowrap;
+  overflow: hidden;
+}
+.Five{
+  align-items: flex-start;
+}
+
 .Five .skills{
-  max-width: 500px;
+  text-align: center;
+  margin-left: 0%;
+  height: 500px;
+  max-width: 250px;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  background-image: url(https://i.ibb.co/f1fJRNn/Meu-projeto.png);
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  background-clip: border-box;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: center;
+  padding: 15px;
+  padding-right: 25px;
+  padding-top: 50px ;
+
 }
+.apps h4 {
+  font-size: 7px;
+  text-align: center;
+}
+
 .Five {
   transition: 1s all linear;
   margin-top: 10vh;
+  height: 500px;
   display: flex; 
   justify-content: center;
 }
@@ -544,30 +583,27 @@ footer{
   font-weight: bold;
   color: white;
   padding: 20px;
-  border-top: 1px solid white;
-  background-color: #5f50b3;
+  border-top: 2px solid white;
+  background-color: #211c24;
   
 }
-@media screen and (max-width: 768px) {
-  .Five .skills{
-    width: 50%;
-    max-width: 50%;
-  }
-  .Five .textS{
-    width: 50%;
-  }
-  .Five{
-    justify-content: flex-start;
-  }
+.Six{
+  display: flex;
+  flex-direction: row;
 }
-
-@media screen and (max-width:425px) {
-  .Five img{
-    width: 50px;
-    margin: 3px;
-    height: 50px;
-  }
-  .Five p{
-    font-size: 1rem;
-  }
+.project {
+  width: 50%;
+  height: 700px;
+}
+.project .mobile{
+  background-image: url('https://i.ibb.co/VMxvwwV/Imagem-do-Whats-App-de-2023-05-29-s-13-22-09.jpg');
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  width: 250px;
+  height: 500px;
+  border-radius: 55px;
+}
+.mobile img{
+  width: 100%;
+  height: 100%;
 }

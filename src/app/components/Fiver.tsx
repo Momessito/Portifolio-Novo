@@ -44,7 +44,12 @@ function Five() {
       titulo: "Next.js",
       descricao: "É um framework de React para construir aplicativos web escaláveis. Ele fornece recursos avançados, como renderização do lado do servidor, rotas dinâmicas, geração estática de conteúdo e muito mais, tornando-o uma opção popular para aplicativos da web em escala empresarial.",
     },
-  ];
+    {
+      src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg",
+      titulo: "C#",
+      descricao: "C# é uma linguagem de programação criada pela Microsoft como parte da plataforma . NET. Por ter uma sintaxe parecida com o Java e C++, o C# pode ser indicado mesmo para programadores iniciantes, que já conhecem a programação Orientada a Objetos.",
+    },
+    ];
 
   function atualizarTexto(imagem: Imagem) {
     const titulo = document.getElementById("titulo");
@@ -63,11 +68,13 @@ function Five() {
     <div className="Five">
       <div className="skills">
         {imagens.map((imagem : any, index : any) => (
+          <div className="apps">
           <img
             key={index}
             src={imagem.src}
             onClick={() => atualizarTexto(imagem)}
           />
+          <h4>{imagem.titulo}</h4></div>
         ))}
       </div>
       <div className="textsS">

@@ -7,6 +7,7 @@ import Four from './components/four';
 import Five from './components/Fiver';
 import Footer from './components/Footer';
 import LanguageSwitch from './components/language';
+import Six from './components/Six';
 
 export default function Home() {
   return (
