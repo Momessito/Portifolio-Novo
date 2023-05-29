@@ -70,7 +70,6 @@ function Five() {
         {imagens.map((imagem : any, index : any) => (
           <div className="apps">
           <img
-            key={index}
             src={imagem.src}
             onClick={() => atualizarTexto(imagem)}
           />
